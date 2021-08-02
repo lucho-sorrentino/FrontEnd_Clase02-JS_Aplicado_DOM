@@ -15,7 +15,8 @@
 
 
 // a) El primer span
-// console.log( document.querySelector("span").innerText)
+// console.log(document.querySelector("span").innerHTML)
+
 
 // b) El primer span con clase “guayerd”
 // console.log( document.querySelector(".guayerd").innerText)
@@ -24,12 +25,132 @@
 // console.log( document.querySelector("#hola").innerText)
 
 // d) Todos los span
-
+// document.querySelectorAll("span").forEach(e => console.log(e.innerText) )
 
 // e) Todos los elementos con clase “guayerd”
-
+// document.querySelectorAll(".guayerd").forEach(e => console.log(e.innerText))
 
 // f) Todos los span con clase “guayerd”.
+// document.querySelectorAll("span.guayerd").forEach(e => console.log(e.innerText))
+
+// g) Todos los span y párrafos.
+// document.querySelectorAll("span, p").forEach(e => console.log(e.innerText) )
 
 
-// f) Todos los span y párrafos.
+
+//     *********Ejercicio 1 *********
+// Hacer un HTML nuevo con 1 titulo H1 sin clases ni ids, con 5 párrafos, de los cuales los dos primeros no tendrán ninguna clase ni id, los 2 siguientes tendrán la clase “rojo” , y el último id “Azul”.
+
+// a) Al ID azul cambiarle el texto por “Azul”.
+// document.querySelector("#azul").innerHTML = "Azul";
+
+// b) Al primer párrafo cambiarle el texto por “Verde”.
+// document.querySelector("p").innerText = "Verde"
+
+// c) A los párrafos de la clase rojo cambiarles el texto por “Rojo”.
+// document.querySelectorAll(".rojo").forEach(e => e.innerText = "Rojo")
+
+// d) A todos los párrafos agregarles un “!” al final del texto. 
+// document.querySelectorAll("p").forEach( e => e.innerText += "!" )
+
+// e) A todos los elementos (párrafos y título) Agregarles un “*” al principio del texto.
+// document.querySelectorAll("h1, p").forEach( e => e.innerText = "*" + e.innerText)
+
+
+
+
+//     *********Ejercicio 2 *********
+// Crear una función flecha que en base a 2 datos de temperatura, indique la temperatura media (Es decir, el promedio de ambas). Mostrar el resultado con un mensaje en el HTML. Por ejemplo en un párrafo, que indique: “La temperatura media es ….”. 
+
+// let tempMedia = (min, max) => (min + max) / 2
+
+// document.querySelector("#temperatura").innerText = `La temperatura media es ${tempMedia(10, 20)}` 
+
+
+
+
+//     *********Ejercicio 3 *********
+// Crear una función flecha que solicite al usuario que elija entre las estaciones del año (Invierno, verano, primavera, otoño) y mostrar una imagen que haga referencia a la estación elegida.
+
+// CON CONDICIONAL TERNARIO:
+// let estacion = prompt("¿Cuál es su estación favorita?").toLowerCase();
+
+// const fotoEstacion = season => season === "verano" ?
+//                                document.querySelector("img").src = "verano.jpg"
+//                                : season === "primavera" ?
+//                                document.querySelector("img").src = "primavera.jpg"
+//                                : season === "otoño" ?
+//                                document.querySelector("img").src = "otoño.jpg"
+//                                : season === "invierno" ?
+//                                document.querySelector("img").src = "invierno.jpg"
+//                                : alert("Ingrese una opcion valida")
+
+// fotoEstacion(estacion)
+
+// OTRA ALTERNATIVA:
+// let estacion = prompt("Ingrese el nombre de una estación:").toLowerCase();
+
+// const fotoEstacion = season => document.querySelector("img").src = `${season}.jpg`
+
+// fotoEstacion(estacion)
+
+
+
+
+
+
+//     *********Ejercicio 4 *********
+// Crear una función flecha que calcule la edad del usuario. Luego mostrar en el html un mensaje personalizado indicando si es mayor o menor de edad.
+// const anioActual = 2021;
+// let fechaNac = parseInt( prompt("Ingrese el año en que nació usando 4 dígitos:") );
+
+// const calcularEdad = nacimiento => anioActual - nacimiento 
+
+// calcularEdad(fechaNac) >= 18 ? document.querySelector("#validarEdad").innerText = "Usted es mayor de edad" : document.querySelector("#validarEdad").innerText = "Usted es menor de edad"
+
+
+
+
+
+//     *********Ejercicio 5 *********
+// Crear una función flecha que solicite al usuario su nombre y su animal favorito (Dar 3 o 4 opciones). Mostrar por HTML un mensaje personalizado saludando a la persona y mostrando una foto de su animal favorito. 
+// let nombre = prompt("¿Como te llamas?");
+// console.log(nombre);
+
+// let animal = prompt("¿Qué animal te gusta más de esta lista? \n Elefante \n Gato \n Perro \n Humano").toLowerCase();
+// console.log(animal);
+
+// const mensaje = () => {
+//     document.querySelector("#msjAnimal").innerText = `Hola ${nombre}! Aquí tienes una foto!`;
+//     document.querySelector("img").src = `${animal}.jpg`;    
+// }
+// mensaje(nombre, animal)
+
+// CON FUNCION TRADICIONAL:
+// function mensaje() {
+//     document.querySelector("#msjAnimal").innerText = `Hola ${nombre}`;
+//     document.querySelector("img").src = `${animal}.jpg`;
+// }
+
+
+
+
+//     *********Ejercicio 6 *********
+// Crear en el HTML un span con un ángulo del 0 al 360. Luego calcular su opuesto y mostrarlo en otro span. (Para calcular el opuesto se hace 360 - el ángulo. Por ejemplo: El opuesto de 90 es 270.) El mensaje debería ser:
+// Ángulo: 90
+// Opuesto: 270
+
+// let angulo = parseInt( prompt("Ingrese el valor de un ángulo entre 0 y 360 grados:"));
+
+// document.querySelector("#angulo").innerText = `El valor del ángulo es de ${angulo}`
+// document.querySelector("#opuesto").innerText = `El valor de su opuesto es de ${360 - angulo}`
+
+
+
+
+//     *********Ejercicio 7 *********
+
+
+
+
+//     *********Ejercicio 8 *********
