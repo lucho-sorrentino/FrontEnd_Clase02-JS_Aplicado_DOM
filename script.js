@@ -63,7 +63,6 @@
 // Crear una función flecha que en base a 2 datos de temperatura, indique la temperatura media (Es decir, el promedio de ambas). Mostrar el resultado con un mensaje en el HTML. Por ejemplo en un párrafo, que indique: “La temperatura media es ….”. 
 
 // let tempMedia = (min, max) => (min + max) / 2
-
 // document.querySelector("#temperatura").innerText = `La temperatura media es ${tempMedia(10, 20)}` 
 
 
@@ -89,11 +88,8 @@
 
 // OTRA ALTERNATIVA:
 // let estacion = prompt("Ingrese el nombre de una estación:").toLowerCase();
-
 // const fotoEstacion = season => document.querySelector("img").src = `${season}.jpg`
-
 // fotoEstacion(estacion)
-
 
 
 
@@ -103,7 +99,6 @@
 // Crear una función flecha que calcule la edad del usuario. Luego mostrar en el html un mensaje personalizado indicando si es mayor o menor de edad.
 // const anioActual = 2021;
 // let fechaNac = parseInt( prompt("Ingrese el año en que nació usando 4 dígitos:") );
-
 // const calcularEdad = nacimiento => anioActual - nacimiento 
 
 // calcularEdad(fechaNac) >= 18 ? document.querySelector("#validarEdad").innerText = "Usted es mayor de edad" : document.querySelector("#validarEdad").innerText = "Usted es menor de edad"
@@ -115,10 +110,7 @@
 //     *********Ejercicio 5 *********
 // Crear una función flecha que solicite al usuario su nombre y su animal favorito (Dar 3 o 4 opciones). Mostrar por HTML un mensaje personalizado saludando a la persona y mostrando una foto de su animal favorito. 
 // let nombre = prompt("¿Como te llamas?");
-// console.log(nombre);
-
 // let animal = prompt("¿Qué animal te gusta más de esta lista? \n Elefante \n Gato \n Perro \n Humano").toLowerCase();
-// console.log(animal);
 
 // const mensaje = () => {
 //     document.querySelector("#msjAnimal").innerText = `Hola ${nombre}! Aquí tienes una foto!`;
@@ -149,8 +141,101 @@
 
 
 //     *********Ejercicio 7 *********
+// Generación de mails empresariales. Le solicitamos al usuario su nombre, su apellido, su empresa y si su empresa es Argentina o no. Luego le mostraremos en el HTML un mensaje con su usuario nuevo:
+// nombre.apellido@empresa.com(.ar si es argentina).
+
+// let nombre = prompt("¿Cuál es su nombre?");
+// let apellido = prompt("¿Cuál es su apellido?");
+// let empresa = prompt("¿Cuál es el nombre de su empresa?");
+// let nacional = confirm("¿Su empresa es argentina?");
+
+// const generadorEmail = () => (nacional) ? document.querySelector("#email").innerText = `Su nueva dirección de correo-e es ${nombre}.${apellido}@${empresa}.com.ar` : document.querySelector("#email").innerText = `Su nueva dirección de correo-e es ${nombre}.${apellido}@${empresa}.com`
+
+// generadorEmail()
 
 
 
 
 //     *********Ejercicio 8 *********
+// En un restaurante tienen menú del día según el día de la semana.
+
+// a) Crearemos una función flecha que reciba qué día de la semana es (Lunes a viernes) y mostraremos por HTML el menú con el nombre del plato y una imagen del mismo.
+
+// Lunes: Milanesas con puré 
+// Martes: Fideos con salsa
+// Miércoles: Pizza
+// Jueves: Hamburguesas con papas fritas
+// Viernes: Pastel de papa
+
+// let dia = prompt("Ingrese el día de la semana (lunes-viernes)").toLowerCase();
+
+// const selectorMenu = () => {
+//     if (dia === "lunes") {
+//         document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es ''Milanesas con puré'`
+//         document.querySelector("#comida").src = "milanesas.jpg"
+//     } else if (dia === "martes") {
+//         document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es 'Fideos con salsa'`
+//         document.querySelector("#comida").src = "fideos.jpg"
+//     } else if (dia === "miercoles") {
+//         document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es 'Pizza'`
+//         document.querySelector("#comida").src = "pizza.jpg"
+//     } else if (dia === "jueves") {
+//         document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es 'Hamburguesas con papas fritas'`
+//         document.querySelector("#comida").src = "hamburguesa.jpg"
+//     } else if (dia === "viernes"){
+//         document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es 'Pastel de papa'`
+//         document.querySelector("#comida").src = "pastel.jpg"
+//     } else {
+//         alert("Ingrese un día válido")
+//     }
+// }
+
+// selectorMenu(dia)
+
+
+
+
+
+// b) Ahora además nos piden que coloquemos debajo del menú del día los precios a los platos que se piden a la carta. Realizarlo desde javascript.
+
+// Milanesas con puré ($300)
+// Fideos con salsa ($250)
+// Pizza ($400)
+// Hamburguesas con papas fritas ($430)
+// Pastel de papa  ($280)
+
+const milanesas = "300";
+const fideos = "250";
+const pizza = "400";
+const hamburguesa = "430";
+const pastel = "280";
+
+let dia = prompt("Ingrese el día de la semana (lunes-viernes)").toLowerCase();
+
+const selectorMenu = () => {
+    if (dia === "lunes") {
+        document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es "Milanesas con puré"`
+        document.querySelector("#comida").src = "milanesas.jpg"
+        document.querySelector("#precio").innerText = `Precio $${milanesas}`
+    } else if (dia === "martes") {
+        document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es "Fideos con salsa"`
+        document.querySelector("#comida").src = "fideos.jpg"
+        document.querySelector("#precio").innerText = `Precio $${fideos}`
+    } else if (dia === "miercoles") {
+        document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es "Pizza"`
+        document.querySelector("#comida").src = "pizza.jpg"
+        document.querySelector("#precio").innerText = `Precio $${pizza}`
+    } else if (dia === "jueves") {
+        document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es "Hamburguesas con papas fritas"`
+        document.querySelector("#comida").src = "hamburguesa.jpg"
+        document.querySelector("#precio").innerText = `Precio $${hamburguesa}`
+    } else if (dia === "viernes"){
+        document.querySelector("#menuCreator").innerText = `El menú del día ${dia} es "Pastel de papa"`
+        document.querySelector("#comida").src = "pastel.jpg"
+        document.querySelector("#precio").innerText = `Precio $${pastel}`
+    } else {
+        alert("Ingrese un día válido")
+    }
+}
+
+selectorMenu(dia)
